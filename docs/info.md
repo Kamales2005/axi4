@@ -7,14 +7,31 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
+# AXI4-Stream Receiver
+
 ## How it works
 
-Explain how your project works
+This project implements a simplified AXI4-Stream receiver.
+
+Incoming 8-bit data is applied to the input pins and sampled on the rising edge of the clock. The received value is stored in an internal register and driven to the output pins.
+
+The design demonstrates the basic concept of receiving streaming data synchronized to a clock.
 
 ## How to test
 
-Explain how to use your project
+1. Apply reset.
+2. Drive an 8-bit value on the input pins.
+3. Wait for a rising clock edge.
+4. Observe the same value on the output pins.
+
+Example:
+
+| Input | Output |
+| ----- | ------ |
+| 0x55  | 0x55   |
+| 0xAA  | 0xAA   |
+| 0xF0  | 0xF0   |
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware is required.
